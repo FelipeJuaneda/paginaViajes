@@ -17,7 +17,7 @@ function cambiarFondoCamping() {
     linkInicio.classList.add('linkLi');
     linkGaleria.classList.add('linkLi');
     linkNosotros.classList.add('linkLi');
-    fondoArena.style.backgroundImage = "url('../imagenes/camping.jpg')";
+    fondoArena.style.backgroundImage = "url('imagenes/camping.jpg')";
     fondoArena.style.backgroundSize = "100% 120%"
     fondoArena.style.transition= "all .5s"
     
@@ -26,7 +26,7 @@ function cambiarFondoCamping() {
 //funcion fondo bosque
 bosque.addEventListener('click', cambiarFondoBosque);
 function cambiarFondoBosque() {
-    fondoArena.style.backgroundImage = "url('../imagenes/bosque.jpg')";
+    fondoArena.style.backgroundImage = "url('imagenes/bosque.jpg')";
     fondoArena.style.backgroundSize = "100% 120%";
     fondoArena.style.transition= "all .5s"
     linkInicio.classList.remove('linkLi');
@@ -45,7 +45,7 @@ function cambiarFondoBosque() {
 //funcion fondo montaña
 montana.addEventListener('click', cambiarFondoMontana);
 function cambiarFondoMontana() {
-    fondoArena.style.backgroundImage = "url('../imagenes/montana.jpg')";
+    fondoArena.style.backgroundImage = "url('imagenes/montana.jpg')";
     fondoArena.style.backgroundSize = "100% 120%"
     fondoArena.style.transition= "all .5s"
 
@@ -69,7 +69,7 @@ function cambiarFondoPlaya() {
     linkGaleria.classList.add('linkLi');
     linkNosotros.classList.add('linkLi');
     
-    fondoArena.style.backgroundImage = "url('../imagenes/playita.jpg')";
+    fondoArena.style.backgroundImage = "url('imagenes/playita.jpg')";
     fondoArena.style.backgroundSize = "100% 120%"
     fondoArena.style.transition= "all .5s"
 };
