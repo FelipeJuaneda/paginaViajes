@@ -23,11 +23,41 @@
     flex-flow: column;
     align-items: center;
 }
+
+.nubes{
+    position: relative;
+    top: 0;
+    width: 100px;
+    height: 100px;
+}
+
+.mapa{
+    background-image: url(../imagenes/mapamod.jpg);
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    border-radius: 50%;
+    -webkit-animation: tierra-girando 8s infinite linear;
+}
+@-webkit-keyframes tierra-girando{
+    from{
+        background-position: left center;
+    }
+    to{
+        background-position: -251px center;
+    }
+}
+
 .header .navegador .linkLogo{
     padding: 10px 30px 0 0;
 }
 .header .navegador .logoImg{
-    width: 122px;
+    position: relative;
+    width: 100%;
+    height: 110%;
+    z-index: 999;
 }
 .header .navegador .listaDesordenada{
     list-style: none;
