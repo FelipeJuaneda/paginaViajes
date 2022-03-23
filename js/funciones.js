@@ -21,25 +21,25 @@ function cerrarBurgerFunction(e) {
     }
 }
 
-//Efecto scroll header
+//EFECTO SCROLL UBUCACION PLANETA Y NAV
 const header = document.querySelector('.header');
 const navegador = document.querySelector('.navegador');
-window.addEventListener('scroll', function () {
-    header.classList.toggle("scrollAbajo", window.scrollY > 0)
-    if(window.matchMedia("(max-width: 600px)").matches){
-        header.style.backgroundColor = "var(--color-blanco)";
-        
-    }
-})
-
-//EFECTO SCROLL UBUCACION PLANETA Y NAV
 let planetaLogo = document.querySelector('.nubes');
 // listaDesordenada
 window.addEventListener('scroll', function () {
+    //Efecto scroll header
+    header.classList.toggle("scrollAbajo", window.scrollY > 0)
+    if (window.innerWidth < 990) {
+        header.classList.toggle("scrollAbajoMod", window.scrollY > 0)
+    }
+
     let scrollenY = window.scrollY;
     let scrollenX = window.scrollX;
+    let mediumBp = matchMedia('(max-width:990px)');
+    let shortBp = matchMedia('(max-width:700px)');
+    let shortBreak = matchMedia('(max-width:610px)');
     //validacion 
-    if (scrollenY <= 100) {
+    if (scrollenY <= 105) {
         planetaLogo.style.marginRight = scrollenY * 8.30 + "px";
         planetaLogo.style.transition = "all .5s";
         listaDesordenada.style.marginTop = scrollenY * -0.85 + "px";
@@ -49,20 +49,19 @@ window.addEventListener('scroll', function () {
         linkGaleria.classList.add('linkLiMod')
         linkInicio.classList.add('linkLiMod')
         linkNosotros.classList.add('linkLiMod')
+        linkGaleria.classList.remove('linkLi')
+        linkInicio.classList.remove('linkLi')
+        linkNosotros.classList.remove('linkLi')
 
-    }
-    if((scrollenY <= 100)&&(window.matchMedia("(max-width: 988px)").matches)){
-        planetaLogo.style.marginRight =  "634px";
-        planetaLogo.style.transition = "all .5s";
-        listaDesordenada.style.marginTop = "-87px";
-        listaDesordenada.style.marginRight = "-271px";
-        listaDesordenada.style.transition = "all .5s";
-    }else if(window.matchMedia("(max-width: 600px)").matches){
-        planetaLogo.style.marginRight =  "0px";
+    } else if ((window.innerWidth < 990) || mediumBp && (scrollenY <= 100)) {
+        planetaLogo.style.marginRight = "0px";
         planetaLogo.style.transition = "all .5s";
         listaDesordenada.style.marginTop = "0px";
         listaDesordenada.style.marginRight = "0px";
         listaDesordenada.style.transition = "all .5s";
+        listaDesordenada.style.gap = "5rem";
+
+
     }
 })
 
@@ -73,7 +72,7 @@ let contenedorSelector = document.getElementById('selectorCont');
 let camping = document.getElementById('selectorCamping');
 let bosque = document.getElementById('selectorBosque');
 let montana = document.getElementById('selectorMontana');
-let playa = document.getElementById('selectorPlaya')
+let playa = document.getElementById('selectorPlaya');
 //links de listadesordenada
 let linkInicio = document.getElementById('linkInicio');
 let linkGaleria = document.getElementById('linkGaleria');
@@ -87,8 +86,11 @@ function cambiarFondoCamping() {
     linkGaleria.classList.add('linkLi');
     linkNosotros.classList.add('linkLi');
     fondoArena.style.backgroundImage = "url('imagenes/camping.jpg')";
-    fondoArena.style.backgroundSize = "100% 120%"
-    fondoArena.style.transition = "all .5s"
+    fondoArena.style.backgroundSize = "100% 120%";
+    fondoArena.style.transition = "all .5s";
+    if ((window.innerWidth < 610) || shortBreak) {
+        fondoArena.style.backgroundSize = "115% 100%"
+    }
 };
 
 //funcion fondo bosque
@@ -96,7 +98,7 @@ bosque.addEventListener('click', cambiarFondoBosque);
 function cambiarFondoBosque() {
     fondoArena.style.backgroundImage = "url('imagenes/bosque.jpg')";
     fondoArena.style.backgroundSize = "100% 120%";
-    fondoArena.style.transition = "all .5s"
+    fondoArena.style.transition = "all .5s";
     linkInicio.classList.remove('linkLi');
     linkInicio.classList.add('linkLiMod');
     linkInicio.classList.add('hoverLink');
@@ -108,14 +110,17 @@ function cambiarFondoBosque() {
     linkNosotros.classList.remove('linkLi');
     linkNosotros.classList.add('linkLiMod');
     linkNosotros.classList.add('hoverLink');
+    if ((window.innerWidth < 610) || shortBreak) {
+        fondoArena.style.backgroundSize = "130% 100%"
+    }
 }
 
 //funcion fondo montaña
 montana.addEventListener('click', cambiarFondoMontana);
 function cambiarFondoMontana() {
     fondoArena.style.backgroundImage = "url('imagenes/montana.jpg')";
-    fondoArena.style.backgroundSize = "100% 120%"
-    fondoArena.style.transition = "all .5s"
+    fondoArena.style.backgroundSize = "100% 120%";
+    fondoArena.style.transition = "all .5s";
 
     linkInicio.classList.remove('linkLi');
     linkInicio.classList.add('linkLiMod');
@@ -128,6 +133,9 @@ function cambiarFondoMontana() {
     linkNosotros.classList.remove('linkLi');
     linkNosotros.classList.add('linkLiMod');
     linkNosotros.classList.add('hoverLink');
+    if ((window.innerWidth < 610) || shortBreak) {
+        fondoArena.style.backgroundSize = "130% 100%"
+    }
 };
 
 //funcion fondo playita
@@ -138,8 +146,11 @@ function cambiarFondoPlaya() {
     linkNosotros.classList.add('linkLi');
 
     fondoArena.style.backgroundImage = "url('imagenes/playita.jpg')";
-    fondoArena.style.backgroundSize = "100% 120%"
-    fondoArena.style.transition = "all .5s"
+    fondoArena.style.backgroundSize = "100% 120%";
+    fondoArena.style.transition = "all .5s";
+    if ((window.innerWidth < 610) || shortBreak) {
+        fondoArena.style.backgroundSize = "154% 100%"
+    }
 };
 
 
@@ -150,7 +161,9 @@ let lugaresCard = document.getElementById('lugaresCard');
 let botonEmpezar = document.getElementById('botonEmpezar');
 botonEmpezar.addEventListener('click', empezarFuncion)
 function empezarFuncion() {
-    /* contenedorLugares.innerHTML=""; */
+
+    lugaresCard.innerHTML = "";
+
     for (const lugares of lugar) {
         let { id, pais, provincia, localidad, img } = lugares;
         let localesCont = document.createElement("div");
@@ -163,9 +176,64 @@ function empezarFuncion() {
                 <h2>${pais}<h2>
                 <h3>${provincia}<h3>
                 <h4>${localidad}<h4>
+                <button id='${id}' class= 'btnLugar'>Ver Mas</button>
             </div>
         </div>
         `;
         lugaresCard.append(localesCont);
     }
+    //MODAL DE LUGARES
+    let botonesLugares = document.getElementsByClassName("btnLugar");
+    console.log(botonesLugares);
+    for (const boton of botonesLugares) {
+
+        boton.addEventListener('click', mostrarLugarSeleccionado)
+        function mostrarLugarSeleccionado() {
+            let seleccion = lugar.find(lugares => lugares.id == this.id);
+            let contenedorModal = document.getElementById('contenedorModal');
+            let modalItem = document.createElement('div');
+            modalItem.classList.add('modalItem');
+            modalItem.innerHTML =
+                `
+            <img class="logoClose" id="logoClose" src="imagenes/closetransp.png">
+            <div class="modalInfo">
+                <span>Ubicado en ${seleccion.pais}</span><br>
+                <span>La prrovincia/estado de ${seleccion.provincia}</span><br>
+                <span>Localidad: ${seleccion.localidad}</span>
+            </div>
+            <div class="modalImg">
+                <img src="${seleccion.img}">
+            </div>
+            `
+            if (cerrarModal) {
+                contenedorModal.append(modalItem);
+                contenedorModal.style.display = "block";
+                modalItem.style.display = "block";
+            } else {
+                alert('ojo')
+            }
+            if (mostrarLugarSeleccionado) {
+                header.style.opacity = "0";
+                header.style.zIndex = "-10";
+            }
+
+
+            let logoClose = document.getElementById('logoClose');
+            console.log(logoClose);
+            logoClose.addEventListener('click', cerrarModal)
+            function cerrarModal() {
+                if ((contenedorModal.style.direction = "block")&&(modalItem.style.display = "block")) {
+                    contenedorModal.style.display = "none";
+                    modalItem.style.display = "none";
+                }else{
+                    contenedorModal.style.display = "none";
+                    modalItem.style.display = "none";
+                }
+
+            }
+        }
+    }
+
+    window.scrollTo(0, 516);
 }
+

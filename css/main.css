@@ -7,6 +7,9 @@
     --color-celesteAgua: #2e86cd;
     --color-celesteClaro: #add2f0d0;
 }
+html {
+    scroll-behavior: smooth;
+}
 /* generales */
 *{
     margin: 0;
@@ -42,9 +45,9 @@
     height: 100%;
     top: 0;
     border-radius: 50%;
-    -webkit-animation: tierra-girando 8s infinite linear;
+    animation: tierra-girando 8s infinite linear;
 }
-@-webkit-keyframes tierra-girando{
+@keyframes tierra-girando{
     from{
         background-position: left center;
     }
@@ -91,17 +94,20 @@
 }
 
 .scrollAbajo{
-    background-color: #000;
+    background-color: var(--color-negro);
     transition: all 1s;
 }
-
+.scrollAbajoMod{
+    background-color: var(--color-blanco);
+    transition: all 1s;
+}
 
 @media screen and (max-width:768px){
     .header .navegador .listaDesordenada{
         gap: 6rem;
     }
 }
-@media screen and (max-width:600px){
+@media screen and (max-width:990px){
     .header .navegador{
         flex-flow: row;
         justify-content: space-evenly;
@@ -109,7 +115,7 @@
     .header .navegador .listaDesordenada{
         position: fixed;
         width: 56%;
-        height: 62vh;
+        height: 85%;
         top: -720px;
         right: 0;
         border-bottom-left-radius: 20px;
@@ -120,10 +126,11 @@
         background-color: rgba(37, 36, 36, 0.808);
         transition: top 1s ease;
     }
+    
     .header .navegador .listaDesordenada .cerrarBurger{
         display: block;
-        position: relative;
-        top: 13px;
+        position: absolute;
+        top: 45px;
     }
     .contenedorBurger{
         display: block;
@@ -131,11 +138,6 @@
     
 }
 
-
-
-.header .navegador .listaDesordenada li{
-    
-}
 .header .navegador .listaDesordenada li .linkLi{
     text-decoration: none;
     color: var(--color-azulOscuro);
@@ -144,7 +146,12 @@
     transition: all .3s;
 }
 
-
+@media screen and (max-width:990px){
+    .header .navegador .listaDesordenada li .linkLi{
+        color: var(--color-blanco);
+        border: solid 1px var(--color-blanco);
+    }
+}
 /* clase modificada para js */
 .linkLiMod{
     color: var(--color-blanco);
@@ -172,7 +179,7 @@
     color: var(--color-negro);
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:990) {
     .header .navegador .listaDesordenada li .linkLi{
         color: var(--color-celesteAgua);
         padding: 8px 60px;
@@ -326,7 +333,8 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
-    padding: 50px 5px;
+    padding: 0 5px;
+    
 }
 /* #contenedorLugares #lugaresCard .cartaLugar{
     text-align: center;
@@ -335,6 +343,9 @@
     background: var(--color-azulOscuro);
     border-radius: 10px;
 } */
+.paCerrarModalActivo{
+    display: none;
+}
 #contenedorLugares #lugaresCard .cartaLugar {
     padding: 20px 10px;
     background: rgb(255, 255, 255);
@@ -356,3 +367,50 @@
 #contenedorLugares #lugaresCard .cartaLugar .itemData h4{
     font-size: 13px;
 }
+
+
+
+#contenedorLugares #contenedorModal {
+    background-color: #00000070;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+.contenedorModalActivo{
+    display: block;
+}
+.modalItemActivo{
+    display: block;
+}
+#contenedorLugares #contenedorModal .modalItem{
+    position: relative;
+    top: 10%;
+    width: 90%;
+    margin: auto;
+    height: 85vh;
+    display: none;
+    background-color: var(--color-naranja);
+}
+
+#contenedorLugares #contenedorModal .modalItem .logoClose{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    cursor: pointer;
+}
+#contenedorLugares #contenedorModal .modalItem .modalInfo{
+    width: 50%;
+    position: absolute;
+    bottom: 68%;
+    left: 43%;
+}
+#contenedorLugares #contenedorModal .modalItem .modalImg{
+    position: absolute;
+    top: 22%;
+    left: 50px;
+}
+
