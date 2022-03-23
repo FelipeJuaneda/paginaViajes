@@ -21,6 +21,50 @@ function cerrarBurgerFunction(e) {
     }
 }
 
+//Efecto scroll header
+const header = document.querySelector('.header');
+const navegador = document.querySelector('.navegador');
+window.addEventListener('scroll', function () {
+    header.classList.toggle("scrollAbajo", window.scrollY > 0)
+    if(window.matchMedia("(max-width: 600px)").matches){
+        header.style.backgroundColor = "var(--color-blanco)";
+        
+    }
+})
+
+//EFECTO SCROLL UBUCACION PLANETA Y NAV
+let planetaLogo = document.querySelector('.nubes');
+// listaDesordenada
+window.addEventListener('scroll', function () {
+    let scrollenY = window.scrollY;
+    let scrollenX = window.scrollX;
+    //validacion 
+    if (scrollenY <= 100) {
+        planetaLogo.style.marginRight = scrollenY * 8.30 + "px";
+        planetaLogo.style.transition = "all .5s";
+        listaDesordenada.style.marginTop = scrollenY * -0.85 + "px";
+        listaDesordenada.style.marginRight = scrollenY * -3.50 + "px";
+        listaDesordenada.style.transition = "all .5s";
+        listaDesordenada.style.gap = "5rem";
+        linkGaleria.classList.add('linkLiMod')
+        linkInicio.classList.add('linkLiMod')
+        linkNosotros.classList.add('linkLiMod')
+
+    }
+    if((scrollenY <= 100)&&(window.matchMedia("(max-width: 988px)").matches)){
+        planetaLogo.style.marginRight =  "634px";
+        planetaLogo.style.transition = "all .5s";
+        listaDesordenada.style.marginTop = "-87px";
+        listaDesordenada.style.marginRight = "-271px";
+        listaDesordenada.style.transition = "all .5s";
+    }else if(window.matchMedia("(max-width: 600px)").matches){
+        planetaLogo.style.marginRight =  "0px";
+        planetaLogo.style.transition = "all .5s";
+        listaDesordenada.style.marginTop = "0px";
+        listaDesordenada.style.marginRight = "0px";
+        listaDesordenada.style.transition = "all .5s";
+    }
+})
 
 /*------------- FUNCION CAMBIAR FONDO MAIN -------------*/
 //FONDO CAMBIANTE
@@ -101,22 +145,27 @@ function cambiarFondoPlaya() {
 
 
 /*------------- GENERADOR DE LUGARES -------------*/
-let contenedorLugares= document.getElementById('contenedorLugares');
+let contenedorLugares = document.getElementById('contenedorLugares');
+let lugaresCard = document.getElementById('lugaresCard');
 let botonEmpezar = document.getElementById('botonEmpezar');
 botonEmpezar.addEventListener('click', empezarFuncion)
-function empezarFuncion(){
+function empezarFuncion() {
     /* contenedorLugares.innerHTML=""; */
     for (const lugares of lugar) {
         let { id, pais, provincia, localidad, img } = lugares;
         let localesCont = document.createElement("div");
-        localesCont.innerHTML = 
-        `
-        <p>Pais: ${pais}<p>
-        <p>provincia: ${provincia}<p>
-        <p>localidad: ${localidad}<p>
-        <p>img: <img src="${img}"><p>
-        
+        localesCont.classList.add('cartaLugar');
+        localesCont.innerHTML =
+            `
+        <div class="cartaItems">
+            <img src="${img}" alt="fotos de lugares hermosos para viajar">
+            <div class="itemData">
+                <h2>${pais}<h2>
+                <h3>${provincia}<h3>
+                <h4>${localidad}<h4>
+            </div>
+        </div>
         `;
-        contenedorLugares.append(localesCont);
+        lugaresCard.append(localesCont);
     }
 }

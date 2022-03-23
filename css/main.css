@@ -24,7 +24,7 @@
     justify-content: center;
     flex-flow: column;
     align-items: center;
-    padding-top: 5px;
+    padding: 5px 6px;
 }
 
 .nubes{
@@ -90,7 +90,10 @@
     display: none;
 }
 
-
+.scrollAbajo{
+    background-color: #000;
+    transition: all 1s;
+}
 
 
 @media screen and (max-width:768px){
@@ -156,6 +159,11 @@
     background-color: var(--color-blanco);
     border: solid 1px var(--color-blanco);
     color: var(--color-negro);
+}
+.header .navegador .listaDesordenada li .linkLiMod:hover{
+    background-color: var(--color-negro);
+    border: solid 1px var(--color-negro);
+    color: var(--color-blanco);
 }
 /* clase modificada para js */
 .hoverLink:hover{
@@ -255,5 +263,96 @@
     transform: translateY(-8px);
 }
 
+#contenedorLugares .contenedorBotonEmpezar{
+    position: absolute;
+    top: 50%;
+    right: 44%;
+}
+@media screen and (max-width:1024px) {
+    #contenedorLugares .contenedorBotonEmpezar{
+        right:42% ;
+    }
+}
+@media screen and (max-width:768px){
+    #contenedorLugares .contenedorBotonEmpezar{
+        right:39% ;
+    }
+} 
+@media screen and (max-width:600px){
+    #contenedorLugares .contenedorBotonEmpezar{
+        right:34% ;
+    }
+} 
+#contenedorLugares .contenedorBotonEmpezar #botonEmpezar {
+    width: 140px;
+    height: 45px;
+    font-size: 23px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--color-blanco);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    position: relative;
+    transition: all 0.5s;
+    z-index: 1;
+}
+#contenedorLugares .contenedorBotonEmpezar #botonEmpezar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: var(--color-celesteAgua);
+    z-index: -1;
+    transition: all 0.5s;
+}
 
+#contenedorLugares .contenedorBotonEmpezar #botonEmpezar:hover::before {
+    width: 100%;
+}
+#contenedorLugares .contenedorBotonEmpezar #botonEmpezar:hover {
+    color: var(--color-blanco);
+}
+#contenedorLugares .contenedorBotonEmpezar #botonEmpezar:active:before {
+    background: var(--color-azulOscuro);
+}
 
+#contenedorLugares #lugaresCard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 50px 5px;
+}
+/* #contenedorLugares #lugaresCard .cartaLugar{
+    text-align: center;
+    text-align: center;
+    padding: 20px 10px;
+    background: var(--color-azulOscuro);
+    border-radius: 10px;
+} */
+#contenedorLugares #lugaresCard .cartaLugar {
+    padding: 20px 10px;
+    background: rgb(255, 255, 255);
+    border-radius: 0.4em;
+    box-shadow: 0.3em 0.3em 0.7em #00000015;
+    transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: rgb(250, 250, 250) 0.2em solid;
+}
+
+#contenedorLugares #lugaresCard .cartaLugar:hover {
+    border: var(--color-celesteAgua) 0.2em solid;
+}
+#contenedorLugares #lugaresCard .cartaLugar .itemData h2{
+    font-size: 30px;
+}
+#contenedorLugares #lugaresCard .cartaLugar .itemData h3{
+    font-size: 18px;
+}
+#contenedorLugares #lugaresCard .cartaLugar .itemData h4{
+    font-size: 13px;
+}
