@@ -4,6 +4,8 @@
     --color-azulOscuro: #3a3639;
     --color-blanco: #fff;
     --color-negro: #000;
+    --color-celesteAgua: #2e86cd;
+    --color-celesteClaro: #add2f0d0;
 }
 /* generales */
 *{
@@ -50,6 +52,9 @@
         background-position: -251px center;
     }
 }
+.mapa:hover{
+    background-size: contain;
+}
 
 .header .navegador .linkLogo{
     padding: 10px 30px 0 0;
@@ -60,21 +65,30 @@
     height: 110%;
     z-index: 999;
 }
+
 .header .navegador .listaDesordenada{
     list-style: none;
     display: flex;
     gap: 10rem;
     padding: 30px 0 40px 0;
 }
-.contenedorBurger{
+.header .navegador .listaDesordenada .cerrarBurger{
     display: none;
 }
-.contenedorBurger .imgBurger{
-    width: 42px;
+.header .navegador .listaDesordenada .cerrarBurger .cerrarImg{
+    width: 35px;
     cursor: pointer;
 }
 
+.contenedorBurger .imgBurger{
+    width: 42px;
+    cursor: pointer;
+    /* z-index: 9999; */
+}
 
+.contenedorBurger{
+    display: none;
+}
 
 
 
@@ -85,17 +99,37 @@
     }
 }
 @media screen and (max-width:600px){
-    .contenedorBurger{
-        display: block;
-    }
-    .header .navegador .listaDesordenada{
-        display: none;
-    }
     .header .navegador{
         flex-flow: row;
         justify-content: space-evenly;
     }
+    .header .navegador .listaDesordenada{
+        position: fixed;
+        width: 56%;
+        height: 62vh;
+        top: -720px;
+        right: 0;
+        border-bottom-left-radius: 20px;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(37, 36, 36, 0.808);
+        transition: top 1s ease;
+    }
+    .header .navegador .listaDesordenada .cerrarBurger{
+        display: block;
+        position: relative;
+        top: 13px;
+    }
+    .contenedorBurger{
+        display: block;
+    }
+    
 }
+
+
+
 .header .navegador .listaDesordenada li{
     
 }
@@ -106,6 +140,8 @@
     padding: 8px 10px;
     transition: all .3s;
 }
+
+
 /* clase modificada para js */
 .linkLiMod{
     color: var(--color-blanco);
@@ -126,6 +162,18 @@
     background-color: var(--color-blanco);
     border: solid 1px var(--color-blanco);
     color: var(--color-negro);
+}
+
+@media screen and (max-width:600px) {
+    .header .navegador .listaDesordenada li .linkLi{
+        color: var(--color-celesteAgua);
+        padding: 8px 60px;
+        border: solid 1px var(--color-celesteAgua);
+    }
+    .header .navegador .listaDesordenada li .linkLi:hover{
+        background-color: var(--color-celesteClaro);
+        border: var(--color-celesteClaro);
+    }
 }
 
 .contenedorFondoArena{
