@@ -111,9 +111,9 @@ function cambiarFondoBosque() {
     linkNosotros.classList.add('linkLiMod');
     linkNosotros.classList.add('hoverLink');
     if ((window.innerWidth < 610) || shortBreak) {
-        fondoArena.style.backgroundSize = "130% 100%"
+        fondoArena.style.backgroundSize = "130% 100%";
     }
-}
+};
 
 //funcion fondo montaña
 montana.addEventListener('click', cambiarFondoMontana);
@@ -149,7 +149,7 @@ function cambiarFondoPlaya() {
     fondoArena.style.backgroundSize = "100% 120%";
     fondoArena.style.transition = "all .5s";
     if ((window.innerWidth < 610) || shortBreak) {
-        fondoArena.style.backgroundSize = "154% 100%"
+        fondoArena.style.backgroundSize = "154% 100%";
     }
 };
 
@@ -159,9 +159,8 @@ function cambiarFondoPlaya() {
 let contenedorLugares = document.getElementById('contenedorLugares');
 let lugaresCard = document.getElementById('lugaresCard');
 let botonEmpezar = document.getElementById('botonEmpezar');
-botonEmpezar.addEventListener('click', empezarFuncion)
+botonEmpezar.addEventListener('click', empezarFuncion);
 function empezarFuncion() {
-
     lugaresCard.innerHTML = "";
 
     for (const lugares of lugar) {
@@ -182,6 +181,7 @@ function empezarFuncion() {
         `;
         lugaresCard.append(localesCont);
     }
+
     //MODAL DE LUGARES
     let botonesLugares = document.getElementsByClassName("btnLugar");
     console.log(botonesLugares);
@@ -197,43 +197,32 @@ function empezarFuncion() {
                 `
             <img class="logoClose" id="logoClose" src="imagenes/closetransp.png">
             <div class="modalInfo">
-                <span>Ubicado en ${seleccion.pais}</span><br>
-                <span>La prrovincia/estado de ${seleccion.provincia}</span><br>
-                <span>Localidad: ${seleccion.localidad}</span>
+            <span>Ubicado en ${seleccion.pais}</span><br>
+            <span>La prrovincia/estado de ${seleccion.provincia}</span><br>
+            <span>Localidad: ${seleccion.localidad}</span>
             </div>
             <div class="modalImg">
-                <img src="${seleccion.img}">
+            <img src="${seleccion.img}">
             </div>
-            `
-            if (cerrarModal) {
-                contenedorModal.append(modalItem);
-                contenedorModal.style.display = "block";
-                modalItem.style.display = "block";
-            } else {
-                alert('ojo')
-            }
-            if (mostrarLugarSeleccionado) {
-                header.style.opacity = "0";
-                header.style.zIndex = "-10";
-            }
+            `;
+            contenedorModal.append(modalItem);
 
-
+            // ABRIR Y CERRAR MODAL
+            /* abrir */
             let logoClose = document.getElementById('logoClose');
-            console.log(logoClose);
+            contenedorModal.style.opacity = "1";
+            contenedorModal.style.visibility = "visible";
+
+            /* cerrar */
             logoClose.addEventListener('click', cerrarModal)
             function cerrarModal() {
-                if ((contenedorModal.style.direction = "block")&&(modalItem.style.display = "block")) {
-                    contenedorModal.style.display = "none";
-                    modalItem.style.display = "none";
-                }else{
-                    contenedorModal.style.display = "none";
-                    modalItem.style.display = "none";
-                }
-
+                contenedorModal.style.opacity = "0";
+                contenedorModal.style.visibility = "hidden";
+                contenedorModal.innerHTML = "";
             }
         }
     }
-
-    window.scrollTo(0, 516);
+    /* scroll a lugares */
+    window.scrollTo(0, 530);
 }
 
