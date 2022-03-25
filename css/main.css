@@ -156,6 +156,10 @@ html {
     .contenedorBurger {
         display: block;
     }
+
+    .nubes {
+        margin-right: 0;
+    }
 }
 
 .header .navegador .listaDesordenada li .linkLi {
@@ -292,16 +296,20 @@ html {
     width: 100%;
     position: relative;
     background-size: cover;
-    background-image: url(../imagenes/atarceder.jpg);
+    /* background-image: url(../imagenes/atarceder.jpg); */
     height: 100vh;
 }
 
+.contenedorFondoArena img {
+    width: 100%;
+    height: 100vh;
+}
 
 /* flecha para abajo */
 .contenedorFlecha {
     position: absolute;
     bottom: 25px;
-    bottom: 100px;
+    bottom: 80px;
     text-align: center;
     width: 100%;
 }

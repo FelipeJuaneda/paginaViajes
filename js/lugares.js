@@ -8,5 +8,4 @@ class Lugares {
         this.img = img;
     }
     //metodos
-    
 };
