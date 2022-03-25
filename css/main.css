@@ -1,28 +1,36 @@
 /* variables */
-:root{
+:root {
     --color-naranja: #da7c57;
     --color-azulOscuro: #3a3639;
     --color-blanco: #fff;
     --color-negro: #000;
     --color-celesteAgua: #2e86cd;
     --color-celesteClaro: #add2f0d0;
+    --font-family: 'Arvo', serif;
 }
-html {
-    scroll-behavior: smooth;
-}
+
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap');
+
 /* generales */
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.header{
+html {
+    scroll-behavior: smooth;
+}
+
+/* PAGINA */
+.header {
     width: 100%;
     position: fixed;
     top: 0;
     z-index: 999;
 }
-.header .navegador{
+
+.header .navegador {
     display: flex;
     justify-content: center;
     flex-flow: column;
@@ -30,14 +38,14 @@ html {
     padding: 5px 6px;
 }
 
-.nubes{
+.nubes {
     position: relative;
     top: 0;
     width: 100px;
     height: 100px;
 }
 
-.mapa{
+.mapa {
     background-image: url(../imagenes/mapamod.jpg);
     background-size: cover;
     position: absolute;
@@ -46,79 +54,89 @@ html {
     top: 0;
     border-radius: 50%;
     animation: tierra-girando 8s infinite linear;
-    
+
     filter: drop-shadow(0px 15px 16px rgba(0, 0, 0, 0.67));
 }
-@keyframes tierra-girando{
-    from{
+
+@keyframes tierra-girando {
+    from {
         background-position: left center;
     }
-    to{
+
+    to {
         background-position: -251px center;
     }
 }
-.mapa:hover{
+
+.mapa:hover {
     background-size: contain;
 }
 
-.header .navegador .linkLogo{
+.header .navegador .linkLogo {
     padding: 10px 30px 0 0;
 }
-.header .navegador .logoImg{
+
+.header .navegador .logoImg {
     position: relative;
     width: 100%;
     height: 110%;
     z-index: 999;
 }
 
-.header .navegador .listaDesordenada{
+.header .navegador .listaDesordenada {
     list-style: none;
     display: flex;
     gap: 10rem;
     padding: 30px 0 40px 0;
+    font-family: var(--font-family);
 }
-.header .navegador .listaDesordenada .cerrarBurger{
+
+.header .navegador .listaDesordenada .cerrarBurger {
     display: none;
 }
-.header .navegador .listaDesordenada .cerrarBurger .cerrarImg{
+
+.header .navegador .listaDesordenada .cerrarBurger .cerrarImg {
     width: 35px;
     cursor: pointer;
 }
 
-.contenedorBurger .imgBurger{
+.contenedorBurger .imgBurger {
     width: 42px;
     cursor: pointer;
     /* z-index: 9999; */
 }
 
-.contenedorBurger{
+.contenedorBurger {
     display: none;
 }
 
-.scrollAbajo{
+.scrollAbajo {
     background-color: var(--color-negro);
     transition: all 1s;
 }
-.scrollAbajoMod{
+
+.scrollAbajoMod {
     background-color: var(--color-blanco);
     transition: all 1s;
 }
 
-@media screen and (max-width:768px){
-    .header .navegador .listaDesordenada{
+@media screen and (max-width:768px) {
+    .header .navegador .listaDesordenada {
         gap: 6rem;
     }
 }
-@media screen and (max-width:990px){
-    .header .navegador{
+
+@media screen and (max-width:990px) {
+    .header .navegador {
         flex-flow: row;
         justify-content: space-evenly;
     }
-    .header .navegador .listaDesordenada{
+
+    .header .navegador .listaDesordenada {
         position: fixed;
-        width: 56%;
-        height: 85%;
-        top: -720px;
+        width: 50%;
+        height: 90%;
+        top: -750px;
         right: 0;
         border-bottom-left-radius: 20px;
         z-index: 10;
@@ -128,19 +146,19 @@ html {
         background-color: rgba(37, 36, 36, 0.808);
         transition: top 1s ease;
     }
-    
-    .header .navegador .listaDesordenada .cerrarBurger{
+
+    .header .navegador .listaDesordenada .cerrarBurger {
         display: block;
         position: absolute;
         top: 45px;
     }
-    .contenedorBurger{
+
+    .contenedorBurger {
         display: block;
     }
-    
 }
 
-.header .navegador .listaDesordenada li .linkLi{
+.header .navegador .listaDesordenada li .linkLi {
     text-decoration: none;
     color: var(--color-azulOscuro);
     border: solid 1px var(--color-azulOscuro);
@@ -148,14 +166,58 @@ html {
     transition: all .3s;
 }
 
-@media screen and (max-width:990px){
-    .header .navegador .listaDesordenada li .linkLi{
+.header .navegador .listaDesordenada .conAmor {
+    color: var(--color-celesteAgua);
+    position: absolute;
+    bottom: 45px;
+    visibility: hidden;
+}
+
+
+.header .navegador .listaDesordenada .conAmor .corazonSpan {
+    animation: colorCorazones 5s infinite;
+}
+
+@keyframes colorCorazones {
+    0% {
+        color: var(--color-celesteAgua);
+    }
+
+    25% {
+        color: red;
+    }
+
+    50% {
+        color: green;
+    }
+
+    100% {
+        color: slateblue;
+    }
+}
+
+.header .navegador .listaDesordenada .conAmor a {
+    color: var(--color-blanco);
+}
+
+.header .navegador .listaDesordenada .conAmor a:hover {
+    color: var(--color-celesteAgua);
+    text-decoration: none;
+}
+
+@media screen and (max-width:990px) {
+    .header .navegador .listaDesordenada li .linkLi {
         color: var(--color-blanco);
         border: solid 1px var(--color-blanco);
     }
+
+    .header .navegador .listaDesordenada .conAmor {
+        visibility: visible;
+    }
 }
+
 /* clase modificada para js */
-.linkLiMod{
+.linkLiMod {
     color: var(--color-blanco);
     border: solid 1px var(--color-blanco);
     padding: 8px 10px;
@@ -164,36 +226,69 @@ html {
     font-weight: bold;
 }
 
-.header .navegador .listaDesordenada li .linkLi:hover{
+.header .navegador .listaDesordenada li .linkLi:hover {
     background-color: var(--color-blanco);
     border: solid 1px var(--color-blanco);
     color: var(--color-negro);
 }
-.header .navegador .listaDesordenada li .linkLiMod:hover{
+
+.header .navegador .listaDesordenada li .linkLiMod:hover {
     background-color: var(--color-negro);
     border: solid 1px var(--color-negro);
     color: var(--color-blanco);
 }
+
 /* clase modificada para js */
-.hoverLink:hover{
+.hoverLink:hover {
     background-color: var(--color-blanco);
     border: solid 1px var(--color-blanco);
     color: var(--color-negro);
 }
 
 @media screen and (max-width:990) {
-    .header .navegador .listaDesordenada li .linkLi{
+    .header .navegador .listaDesordenada li .linkLi {
         color: var(--color-celesteAgua);
         padding: 8px 60px;
         border: solid 1px var(--color-celesteAgua);
     }
-    .header .navegador .listaDesordenada li .linkLi:hover{
+
+    .header .navegador .listaDesordenada li .linkLi:hover {
         background-color: var(--color-celesteClaro);
         border: var(--color-celesteClaro);
     }
+
 }
 
-.contenedorFondoArena{
+@media screen and (max-width:530px) {
+    .header .navegador {
+        justify-content: space-between;
+        padding: 0 60px;
+    }
+
+    .nubes {
+        margin-top: 5px;
+        left: -17px
+    }
+
+    .header .navegador .listaDesordenada {
+        width: 60%;
+    }
+
+    .header .navegador .listaDesordenada .cerrarBurger .cerrarImg {
+        width: 30px;
+    }
+
+    .header .navegador .listaDesordenada .cerrarBurger {
+        top: 38px;
+        right: 62px;
+    }
+}
+
+
+
+
+/* -------------FONDO ARENA----------------------- */
+.contenedorFondoArena {
     width: 100%;
     position: relative;
     background-size: cover;
@@ -203,18 +298,19 @@ html {
 
 
 /* flecha para abajo */
-.contenedorFlecha{
+.contenedorFlecha {
     position: absolute;
     bottom: 25px;
     bottom: 100px;
     text-align: center;
     width: 100%;
 }
-.contenedorFlecha img{
+
+.contenedorFlecha img {
     width: 60px;
 }
 
-.contenedorSelector{
+.contenedorSelector {
     width: 100%;
     margin: auto;
     position: absolute;
@@ -223,7 +319,8 @@ html {
     justify-content: center;
     gap: 20px;
 }
-.contenedorSelector .selector1{
+
+.contenedorSelector .selector1 {
     width: 55px;
     height: 55px;
     border-radius: 50%;
@@ -232,10 +329,12 @@ html {
     cursor: pointer;
     transition: transform .2s;
 }
-.contenedorSelector .selector1:hover{
+
+.contenedorSelector .selector1:hover {
     transform: translateY(-8px);
 }
-.contenedorSelector .selector2{
+
+.contenedorSelector .selector2 {
     width: 55px;
     height: 55px;
     border-radius: 50%;
@@ -244,10 +343,12 @@ html {
     cursor: pointer;
     transition: transform .2s;
 }
-.contenedorSelector .selector2:hover{
+
+.contenedorSelector .selector2:hover {
     transform: translateY(-8px);
 }
-.contenedorSelector .selector3{
+
+.contenedorSelector .selector3 {
     width: 55px;
     height: 55px;
     border-radius: 50%;
@@ -256,10 +357,12 @@ html {
     cursor: pointer;
     transition: transform .2s;
 }
-.contenedorSelector .selector3:hover{
+
+.contenedorSelector .selector3:hover {
     transform: translateY(-8px);
 }
-.contenedorSelector .selector4{
+
+.contenedorSelector .selector4 {
     width: 55px;
     height: 55px;
     border-radius: 50%;
@@ -268,30 +371,35 @@ html {
     cursor: pointer;
     transition: transform .2s;
 }
-.contenedorSelector .selector4:hover{
+
+.contenedorSelector .selector4:hover {
     transform: translateY(-8px);
 }
 
-#contenedorLugares .contenedorBotonEmpezar{
+#contenedorLugares .contenedorBotonEmpezar {
     position: absolute;
     top: 50%;
     right: 44%;
 }
+
 @media screen and (max-width:1024px) {
-    #contenedorLugares .contenedorBotonEmpezar{
-        right:42% ;
+    #contenedorLugares .contenedorBotonEmpezar {
+        right: 42%;
     }
 }
-@media screen and (max-width:768px){
-    #contenedorLugares .contenedorBotonEmpezar{
-        right:39% ;
+
+@media screen and (max-width:768px) {
+    #contenedorLugares .contenedorBotonEmpezar {
+        right: 39%;
     }
-} 
-@media screen and (max-width:600px){
-    #contenedorLugares .contenedorBotonEmpezar{
-        right:34% ;
+}
+
+@media screen and (max-width:600px) {
+    #contenedorLugares .contenedorBotonEmpezar {
+        right: 34%;
     }
-} 
+}
+
 #contenedorLugares .contenedorBotonEmpezar #botonEmpezar {
     width: 140px;
     height: 45px;
@@ -307,6 +415,7 @@ html {
     transition: all 0.5s;
     z-index: 1;
 }
+
 #contenedorLugares .contenedorBotonEmpezar #botonEmpezar::before {
     content: "";
     position: absolute;
@@ -322,22 +431,25 @@ html {
 #contenedorLugares .contenedorBotonEmpezar #botonEmpezar:hover::before {
     width: 100%;
 }
+
 #contenedorLugares .contenedorBotonEmpezar #botonEmpezar:hover {
     color: var(--color-blanco);
 }
+
 #contenedorLugares .contenedorBotonEmpezar #botonEmpezar:active:before {
     background: var(--color-azulOscuro);
 }
 
-#contenedorLugares #lugaresCard{
+#contenedorLugares #lugaresCard {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 50px;
     padding: 0 5px;
-    
+
 }
+
 /* #contenedorLugares #lugaresCard .cartaLugar{
     text-align: center;
     text-align: center;
@@ -345,9 +457,10 @@ html {
     background: var(--color-azulOscuro);
     border-radius: 10px;
 } */
-.paCerrarModalActivo{
+.paCerrarModalActivo {
     display: none;
 }
+
 #contenedorLugares #lugaresCard .cartaLugar {
     padding: 20px 10px;
     background: rgb(255, 255, 255);
@@ -360,33 +473,24 @@ html {
 #contenedorLugares #lugaresCard .cartaLugar:hover {
     border: var(--color-celesteAgua) 0.2em solid;
 }
-#contenedorLugares #lugaresCard .cartaLugar .itemData h2{
+
+#contenedorLugares #lugaresCard .cartaLugar .itemData h2 {
     font-size: 30px;
 }
-#contenedorLugares #lugaresCard .cartaLugar .itemData h3{
+
+#contenedorLugares #lugaresCard .cartaLugar .itemData h3 {
     font-size: 18px;
 }
-#contenedorLugares #lugaresCard .cartaLugar .itemData h4{
+
+#contenedorLugares #lugaresCard .cartaLugar .itemData h4 {
     font-size: 13px;
 }
 
 
-/*  
-#contenedorLugares #contenedorModal {
-    background-color: #00000070;
-    position: fixed;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    display: none;
-    z-index: 1000;
-}
-.contenedorModalActivo{
-    display: block;
-}
-.modalItemActivo{
-    display: block;
-}
+
+
+/* 
+
 #contenedorLugares #contenedorModal .modalItem{
     position: relative;
     top: 10%;
@@ -419,6 +523,7 @@ html {
 */
 
 
+/* -------------------MODAL DE LUGARES-------------------------- */
 #contenedorLugares #contenedorModal {
     background-color: #00000070;
     position: fixed;
@@ -433,8 +538,9 @@ html {
     visibility: hidden;
     transition: all 0.6s;
 }
-#contenedorLugares #contenedorModal .modalItem{
-    width: 90%;
+
+#contenedorLugares #contenedorModal .modalItem {
+    width: 70%;
     margin: auto;
     height: 85vh;
     overflow: hidden;
@@ -442,7 +548,56 @@ html {
     transition: transform 0.6s;
     transform: translateY(0%);
     position: relative;
+    display: flex;
 }
-.modalCerrado{
-    transform: translateY(-200%);
+
+#contenedorLugares #contenedorModal .modalItem .logoClose {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 17px;
+    cursor: pointer;
+    background-color: var(--color-blanco);
+    padding: 7px;
+    border-radius: 10px;
+    z-index: 90;
+}
+
+#contenedorLugares #contenedorModal .modalItem .fotoLateral {
+    width: 40%;
+    height: 100%;
+}
+
+#contenedorLugares #contenedorModal .modalItem .fotoLateral img {
+    width: 100%;
+    height: 100%;
+}
+
+#contenedorLugares #contenedorModal .modalItem .modalInfo {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+}
+
+#contenedorLugares #contenedorModal .modalItem .modalInfo .modalTitulo {
+    font-size: 40px;
+    position: absolute;
+    left: 12px;
+    top: 9px;
+    padding: 5px;
+    background-color: black;
+    color: white;
+}
+
+#contenedorLugares #contenedorModal .modalItem .modalInfo .modalInfoLugar {
+    padding-bottom: 20px;
+}
+
+#contenedorLugares #contenedorModal .modalItem .modalInfo .modalInfoLugar .modalUbicacion {
+    font-size: 25px;
 }

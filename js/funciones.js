@@ -25,21 +25,17 @@ function cerrarBurgerFunction(e) {
 const header = document.querySelector('.header');
 const navegador = document.querySelector('.navegador');
 let planetaLogo = document.querySelector('.nubes');
-// listaDesordenada
+
 window.addEventListener('scroll', function () {
     //Efecto scroll header
-    header.classList.toggle("scrollAbajo", window.scrollY > 0)
-    if (window.innerWidth < 990) {
-        header.classList.toggle("scrollAbajoMod", window.scrollY > 0)
-    }
-
     let scrollenY = window.scrollY;
     let scrollenX = window.scrollX;
     let mediumBp = matchMedia('(max-width:990px)');
     let shortBp = matchMedia('(max-width:700px)');
-    let shortBreak = matchMedia('(max-width:610px)');
-    //validacion 
-    if (scrollenY <= 105) {
+    header.classList.toggle("scrollAbajo", window.scrollY > 0)
+    if (window.innerWidth < 990) {
+        header.classList.toggle("scrollAbajoMod", window.scrollY > 0)
+    } else if (scrollenY <= 105) {
         planetaLogo.style.marginRight = scrollenY * 8.30 + "px";
         planetaLogo.style.transition = "all .5s";
         listaDesordenada.style.marginTop = scrollenY * -0.85 + "px";
@@ -60,8 +56,6 @@ window.addEventListener('scroll', function () {
         listaDesordenada.style.marginRight = "0px";
         listaDesordenada.style.transition = "all .5s";
         listaDesordenada.style.gap = "5rem";
-
-
     }
 })
 
@@ -162,7 +156,6 @@ let botonEmpezar = document.getElementById('botonEmpezar');
 botonEmpezar.addEventListener('click', empezarFuncion);
 function empezarFuncion() {
     lugaresCard.innerHTML = "";
-
     for (const lugares of lugar) {
         let { id, pais, provincia, localidad, img } = lugares;
         let localesCont = document.createElement("div");
@@ -196,13 +189,19 @@ function empezarFuncion() {
             modalItem.innerHTML =
                 `
             <img class="logoClose" id="logoClose" src="imagenes/closetransp.png">
-            <div class="modalInfo">
-            <span>Ubicado en ${seleccion.pais}</span><br>
-            <span>La prrovincia/estado de ${seleccion.provincia}</span><br>
-            <span>Localidad: ${seleccion.localidad}</span>
+            <div class="fotoLateral">
+                <img src="">
             </div>
-            <div class="modalImg">
-            <img src="${seleccion.img}">
+            <div class="modalInfo">
+                <span class="modalTitulo">${seleccion.pais}</span>
+                <div class="modalInfoLugar">
+                    <p class="modalUbicacion">Ubicado en ${seleccion.pais}</p>
+                    <p>La provincia/estado de ${seleccion.provincia}</p>
+                    <p>Localidad: ${seleccion.localidad}</p>
+                </div>
+                <div class="modalImg">
+                    <img src="${seleccion.img}">
+                </div>
             </div>
             `;
             contenedorModal.append(modalItem);
