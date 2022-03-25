@@ -1,5 +1,24 @@
 {
   "dependencies": {
     "sweetalert2": "^11.4.6"
-  }
+  },
+  "name": "paginaviajes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelipeJuaneda/paginaViajes.git"
+  },
+  "keywords": [],
+  "author": "Felipe Agustin Juaneda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FelipeJuaneda/paginaViajes/issues"
+  },
+  "homepage": "https://github.com/FelipeJuaneda/paginaViajes#readme",
+  "description": "Pequeño proyecto de prueba para practicar"
 }

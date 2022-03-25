@@ -26,7 +26,7 @@ const header = document.querySelector('.header');
 const navegador = document.querySelector('.navegador');
 let planetaLogo = document.querySelector('.nubes');
 
-window.addEventListener('scroll', function efectoScrollResponsive () {
+window.addEventListener('scroll', function efectoScrollResponsive() {
     //Efecto scroll header
     let scrollenY = window.scrollY;
     console.log(scrollenY);
@@ -52,8 +52,7 @@ window.addEventListener('scroll', function efectoScrollResponsive () {
         linkGaleria.classList.remove('linkLi')
         linkInicio.classList.remove('linkLi')
         linkNosotros.classList.remove('linkLi')
-        
-    } 
+    }
 })
 /*------------- FUNCION CAMBIAR FONDO MAIN -------------*/
 //FONDO CAMBIANTE
@@ -73,7 +72,7 @@ let linkNosotros = document.getElementById('linkNosotros');
 //funcion fondo camping
 camping.addEventListener('click', cambiarFondoCamping);
 function cambiarFondoCamping() {
-    imagenAtardecer.style.visibility= "hidden";
+    imagenAtardecer.style.visibility = "hidden";
     linkInicio.classList.add('linkLi');
     linkGaleria.classList.add('linkLi');
     linkNosotros.classList.add('linkLi');
@@ -89,7 +88,7 @@ function cambiarFondoCamping() {
 bosque.addEventListener('click', cambiarFondoBosque);
 function cambiarFondoBosque() {
     fondoArena.style.backgroundImage = "url('imagenes/bosque.jpg')";
-    imagenAtardecer.style.visibility= "hidden";
+    imagenAtardecer.style.visibility = "hidden";
     fondoArena.style.backgroundSize = "100% 120%";
     fondoArena.style.transition = "all .5s";
     linkInicio.classList.remove('linkLi');
@@ -111,7 +110,7 @@ function cambiarFondoBosque() {
 //funcion fondo montaña
 montana.addEventListener('click', cambiarFondoMontana);
 function cambiarFondoMontana() {
-    imagenAtardecer.style.visibility= "hidden";
+    imagenAtardecer.style.visibility = "hidden";
     fondoArena.style.backgroundImage = "url('imagenes/montana.jpg')";
     fondoArena.style.backgroundSize = "100% 120%";
     fondoArena.style.transition = "all .5s";
@@ -135,7 +134,7 @@ function cambiarFondoMontana() {
 //funcion fondo playita
 playa.addEventListener('click', cambiarFondoPlaya);
 function cambiarFondoPlaya() {
-    imagenAtardecer.style.visibility= "hidden";
+    imagenAtardecer.style.visibility = "hidden";
     linkInicio.classList.add('linkLi');
     linkGaleria.classList.add('linkLi');
     linkNosotros.classList.add('linkLi');
@@ -166,9 +165,9 @@ function empezarFuncion() {
         <div class="cartaItems">
             <img src="${img}" alt="fotos de lugares hermosos para viajar">
             <div class="itemData">
-                <h2>${pais}<h2>
-                <h3>${provincia}<h3>
-                <h4>${localidad}<h4>
+                <h2>${pais}</h2>
+                <h3>${provincia}</h3>
+                <h4>${localidad}</h4>
                 <button id='${id}' class= 'btnLugar'>Ver Mas</button>
             </div>
         </div>
@@ -179,7 +178,7 @@ function empezarFuncion() {
     let botonesLugares = document.getElementsByClassName("btnLugar");
     console.log(botonesLugares);
     for (const boton of botonesLugares) {
-        
+
         boton.addEventListener('click', mostrarLugarSeleccionado)
         function mostrarLugarSeleccionado() {
             let seleccion = lugar.find(lugares => lugares.id == this.id);
@@ -190,7 +189,7 @@ function empezarFuncion() {
             `
             <img class="logoClose" id="logoClose" src="imagenes/closetransp.png">
             <div class="fotoLateral">
-            <img src="">
+            <img src="${seleccion.imgLateral}">
             </div>
             <div class="modalInfo">
             <span class="modalTitulo">${seleccion.pais}</span>
@@ -205,13 +204,13 @@ function empezarFuncion() {
             </div>
             `;
             contenedorModal.append(modalItem);
-            
+
             // ABRIR Y CERRAR MODAL
             /* abrir */
             let logoClose = document.getElementById('logoClose');
             contenedorModal.style.opacity = "1";
             contenedorModal.style.visibility = "visible";
-            
+
             /* cerrar */
             logoClose.addEventListener('click', cerrarModal)
             function cerrarModal() {
