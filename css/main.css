@@ -573,6 +573,7 @@ html {
 #contenedorLugares #contenedorModal .modalItem .fotoLateral img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 #contenedorLugares #contenedorModal .modalItem .modalInfo {
@@ -685,7 +686,7 @@ html {
 @media screen and (max-width:768px) {
     #contenedorLugares #contenedorModal .modalItem {
         width: 95%;
-        height: 95vh;
+        height: 75vh;
     }
 
     #contenedorLugares #contenedorModal .modalItem .fotoLateral {
