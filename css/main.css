@@ -296,12 +296,7 @@ html {
     width: 100%;
     position: relative;
     background-size: cover;
-    /* background-image: url(../imagenes/atarceder.jpg); */
-    height: 100vh;
-}
-
-.contenedorFondoArena img {
-    width: 100%;
+    background-image: url(../imagenes/atarceder.jpg);
     height: 100vh;
 }
 
@@ -512,7 +507,8 @@ html {
     cursor: pointer;
     transition: all .6s;
 }
-#contenedorLugares #lugaresCard .cartaLugar .itemData .btnLugar:hover{
+
+#contenedorLugares #lugaresCard .cartaLugar .itemData .btnLugar:hover {
     color: var(--color-negro);
     background-color: var(--color-blanco);
     transform: scale(1.05);
@@ -672,6 +668,7 @@ html {
 
     #contenedorLugares #contenedorModal .modalItem .modalInfo {
         width: 100%;
+        padding: 10px 0;
     }
 
     #contenedorLugares #contenedorModal .modalItem .modalInfo .modalImg {

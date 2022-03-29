@@ -29,17 +29,12 @@ let planetaLogo = document.querySelector('.nubes');
 window.addEventListener('scroll', function efectoScrollResponsive() {
     //Efecto scroll header
     let scrollenY = window.scrollY;
-    console.log(scrollenY);
     let scrollenX = window.scrollX;
-    let mediaMobil = window.matchMedia("(min-width: 990px)");
-    let mediaCompu = window.matchMedia("(max-width: 990px)");
-
-    let mediumBp = matchMedia('(max-width:990px)');
+    let mediaCompu = window.matchMedia("(min-width: 990px)");
+    let mediaMobil = window.matchMedia("(max-width: 990px)");
     let shortBp = matchMedia('(max-width:700px)');
     header.classList.toggle("scrollAbajo", window.scrollY > 0)
-    if (window.innerWidth < 990) {
-        header.classList.toggle("scrollAbajoMod", window.scrollY > 0)
-    } else if (scrollenY <= 105) {
+    if ((window.innerWidth > 990)&&(scrollenY <= 105)) {
         planetaLogo.style.marginRight = scrollenY * 8.30 + "px";
         planetaLogo.style.transition = "all .5s";
         listaDesordenada.style.marginTop = scrollenY * -0.85 + "px";
@@ -52,6 +47,18 @@ window.addEventListener('scroll', function efectoScrollResponsive() {
         linkGaleria.classList.remove('linkLi')
         linkInicio.classList.remove('linkLi')
         linkNosotros.classList.remove('linkLi')
+    }else if(scrollenY > 105){
+        planetaLogo.style.marginRight = "855px";
+        planetaLogo.style.transition = "all .5s";
+        listaDesordenada.style.marginTop ="-87.55px";
+        listaDesordenada.style.marginRight = "-360px";
+    }
+    if ((window.innerWidth < 990) && (mediaMobil)) {
+        header.classList.toggle("scrollAbajoMod", window.scrollY > 0);
+        planetaLogo.style.marginRight = "0px";
+        planetaLogo.style.transition = "all .5s";
+        listaDesordenada.style.marginTop ="0px";
+        listaDesordenada.style.marginRight = "0px";
     }
 })
 /*------------- FUNCION CAMBIAR FONDO MAIN -------------*/
@@ -72,7 +79,6 @@ let linkNosotros = document.getElementById('linkNosotros');
 //funcion fondo camping
 camping.addEventListener('click', cambiarFondoCamping);
 function cambiarFondoCamping() {
-    imagenAtardecer.style.visibility = "hidden";
     linkInicio.classList.add('linkLi');
     linkGaleria.classList.add('linkLi');
     linkNosotros.classList.add('linkLi');
@@ -88,7 +94,6 @@ function cambiarFondoCamping() {
 bosque.addEventListener('click', cambiarFondoBosque);
 function cambiarFondoBosque() {
     fondoArena.style.backgroundImage = "url('imagenes/bosque.jpg')";
-    imagenAtardecer.style.visibility = "hidden";
     fondoArena.style.backgroundSize = "100% 120%";
     fondoArena.style.transition = "all .5s";
     linkInicio.classList.remove('linkLi');
@@ -110,7 +115,6 @@ function cambiarFondoBosque() {
 //funcion fondo montaña
 montana.addEventListener('click', cambiarFondoMontana);
 function cambiarFondoMontana() {
-    imagenAtardecer.style.visibility = "hidden";
     fondoArena.style.backgroundImage = "url('imagenes/montana.jpg')";
     fondoArena.style.backgroundSize = "100% 120%";
     fondoArena.style.transition = "all .5s";
@@ -134,7 +138,6 @@ function cambiarFondoMontana() {
 //funcion fondo playita
 playa.addEventListener('click', cambiarFondoPlaya);
 function cambiarFondoPlaya() {
-    imagenAtardecer.style.visibility = "hidden";
     linkInicio.classList.add('linkLi');
     linkGaleria.classList.add('linkLi');
     linkNosotros.classList.add('linkLi');
@@ -176,7 +179,6 @@ function empezarFuncion() {
     }
     //MODAL DE LUGARES
     let botonesLugares = document.getElementsByClassName("btnLugar");
-    console.log(botonesLugares);
     for (const boton of botonesLugares) {
 
         boton.addEventListener('click', mostrarLugarSeleccionado)
@@ -186,7 +188,7 @@ function empezarFuncion() {
             let modalItem = document.createElement('div');
             modalItem.classList.add('modalItem');
             modalItem.innerHTML =
-            `
+                `
             <img class="logoClose" id="logoClose" src="imagenes/closetransp.png">
             <div class="fotoLateral">
             <img src="${seleccion.imgLateral}">
@@ -218,10 +220,17 @@ function empezarFuncion() {
                 contenedorModal.style.visibility = "hidden";
                 contenedorModal.innerHTML = "";
             }
+            /* cerrar al apretar afuera del modal */
+            window.addEventListener('click', function (e) {
+                if (e.target == contenedorModal) {
+                    contenedorModal.style.opacity = "0";
+                    contenedorModal.style.visibility = "hidden";
+                    contenedorModal.innerHTML = "";
+                }
+            })
         }
     }
     /* scroll a lugares */
     let coords = lugaresCard.getBoundingClientRect();
-    console.log(coords);
     window.scrollTo(0, coords.top);
 }
