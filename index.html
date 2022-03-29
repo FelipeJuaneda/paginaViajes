@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagenes/planetaIcono.png" type="image/x-icon">
+    <!-- AOS ANIMACION -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +20,7 @@
 <body>
     <!-- HEADER -->
     <header class="header">
-        <nav class="navegador">
+        <nav data-aos="fade-down" data-aos-delay="300" class="navegador">
             <div class="nubes">
                 <a class="linkLogo" href=""><img class="logoImg" src="imagenes/arcomundo.png" alt=""></a>
                 <div class="mapa"></div>
@@ -55,7 +57,7 @@
 
     <!---------------LUGARES------------->
     <section id="contenedorLugares">
-        <div class="contenedorBotonEmpezar">
+        <div class="contenedorBotonEmpezar" data-aos="zoom-in-up" data-aos-delay="300">
             <button id="botonEmpezar" type="button">Empezar</button>
         </div>
 
@@ -67,7 +69,11 @@
         </div>
     </section>
 
-
+    <!-- AOS ANIMACION -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <!-- FONT AWESOME -->
     <script src="https://kit.fontawesome.com/e5828c9348.js" crossorigin="anonymous"></script>
     <!-- SWEET ALERT -->

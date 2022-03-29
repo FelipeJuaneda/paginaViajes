@@ -59,6 +59,8 @@ window.addEventListener('scroll', function efectoScrollResponsive() {
         planetaLogo.style.transition = "all .5s";
         listaDesordenada.style.marginTop ="0px";
         listaDesordenada.style.marginRight = "0px";
+    }else{
+        header.classList.remove("scrollAbajoMod")
     }
 })
 /*------------- FUNCION CAMBIAR FONDO MAIN -------------*/
@@ -165,7 +167,7 @@ function empezarFuncion() {
         localesCont.classList.add('cartaLugar');
         localesCont.innerHTML =
             `
-        <div class="cartaItems">
+        <div data-aos="zoom-in-up" class="cartaItems">
             <img src="${img}" alt="fotos de lugares hermosos para viajar">
             <div class="itemData">
                 <h2>${pais}</h2>
@@ -177,6 +179,8 @@ function empezarFuncion() {
         `;
         lugaresCard.append(localesCont);
     }
+    /* scroll a lugares */
+    window.scrollTo(0, 520);
     //MODAL DE LUGARES
     let botonesLugares = document.getElementsByClassName("btnLugar");
     for (const boton of botonesLugares) {
@@ -230,7 +234,5 @@ function empezarFuncion() {
             })
         }
     }
-    /* scroll a lugares */
-    let coords = lugaresCard.getBoundingClientRect();
-    window.scrollTo(0, coords.top);
+    
 }
