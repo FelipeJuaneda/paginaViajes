@@ -79,6 +79,7 @@ let linkNosotros = document.getElementById('linkNosotros');
 
 
 //funcion fondo camping
+
 camping.addEventListener('click', cambiarFondoCamping);
 function cambiarFondoCamping() {
     linkInicio.classList.add('linkLi');
@@ -87,7 +88,7 @@ function cambiarFondoCamping() {
     fondoArena.style.backgroundImage = "url('imagenes/camping.jpg')";
     fondoArena.style.backgroundSize = "100% 120%";
     fondoArena.style.transition = "all .5s";
-    if ((window.innerWidth < 610) || shortBreak) {
+    if (window.innerWidth < 610) {
         fondoArena.style.backgroundSize = "115% 100%"
     }
 };
@@ -109,7 +110,7 @@ function cambiarFondoBosque() {
     linkNosotros.classList.remove('linkLi');
     linkNosotros.classList.add('linkLiMod');
     linkNosotros.classList.add('hoverLink');
-    if ((window.innerWidth < 610) || shortBreak) {
+    if (window.innerWidth < 610) {
         fondoArena.style.backgroundSize = "130% 100%";
     }
 };
@@ -132,7 +133,7 @@ function cambiarFondoMontana() {
     linkNosotros.classList.remove('linkLi');
     linkNosotros.classList.add('linkLiMod');
     linkNosotros.classList.add('hoverLink');
-    if ((window.innerWidth < 610) || shortBreak) {
+    if (window.innerWidth < 610) {
         fondoArena.style.backgroundSize = "130% 100%"
     }
 };
@@ -147,7 +148,7 @@ function cambiarFondoPlaya() {
     fondoArena.style.backgroundImage = "url('imagenes/playita.jpg')";
     fondoArena.style.backgroundSize = "100% 120%";
     fondoArena.style.transition = "all .5s";
-    if ((window.innerWidth < 610) || shortBreak) {
+    if (window.innerWidth < 610) {
         fondoArena.style.backgroundSize = "154% 100%";
     }
 };
@@ -161,6 +162,7 @@ let botonEmpezar = document.getElementById('botonEmpezar');
 botonEmpezar.addEventListener('click', empezarFuncion);
 function empezarFuncion() {
     lugaresCard.innerHTML = "";
+    contenedorLugares.style.padding = "50px 0"
     for (const lugares of lugar) {
         let { id, pais, provincia, localidad, img } = lugares;
         let localesCont = document.createElement("div");
