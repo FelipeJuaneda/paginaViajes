@@ -290,7 +290,6 @@ html {
 
 
 
-
 /* -------------FONDO ARENA----------------------- */
 .contenedorFondoArena {
     width: 100%;
@@ -453,13 +452,6 @@ html {
 
 }
 
-/* #contenedorLugares #lugaresCard .cartaLugar{
-    text-align: center;
-    text-align: center;
-    padding: 20px 10px;
-    background: var(--color-azulOscuro);
-    border-radius: 10px;
-} */
 .paCerrarModalActivo {
     display: none;
 }
