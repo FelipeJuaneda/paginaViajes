@@ -34,7 +34,7 @@ window.addEventListener('scroll', function efectoScrollResponsive() {
     let mediaMobil = window.matchMedia("(max-width: 990px)");
     let shortBp = matchMedia('(max-width:700px)');
     header.classList.toggle("scrollAbajo", window.scrollY > 0)
-    if ((window.innerWidth > 990)&&(scrollenY <= 105)) {
+    if ((window.innerWidth > 990) && (scrollenY <= 105)) {
         planetaLogo.style.marginRight = scrollenY * 8.30 + "px";
         planetaLogo.style.transition = "all .5s";
         listaDesordenada.style.marginTop = scrollenY * -0.85 + "px";
@@ -47,19 +47,19 @@ window.addEventListener('scroll', function efectoScrollResponsive() {
         linkGaleria.classList.remove('linkLi')
         linkInicio.classList.remove('linkLi')
         linkNosotros.classList.remove('linkLi')
-    }else if(scrollenY > 105){
+    } else if (scrollenY > 105) {
         planetaLogo.style.marginRight = "855px";
         planetaLogo.style.transition = "all .5s";
-        listaDesordenada.style.marginTop ="-87.55px";
+        listaDesordenada.style.marginTop = "-87.55px";
         listaDesordenada.style.marginRight = "-360px";
     }
     if ((window.innerWidth < 990) && (mediaMobil)) {
         header.classList.toggle("scrollAbajoMod", window.scrollY > 0);
         planetaLogo.style.marginRight = "0px";
         planetaLogo.style.transition = "all .5s";
-        listaDesordenada.style.marginTop ="0px";
+        listaDesordenada.style.marginTop = "0px";
         listaDesordenada.style.marginRight = "0px";
-    }else{
+    } else {
         header.classList.remove("scrollAbajoMod")
     }
 })
@@ -162,7 +162,7 @@ let botonEmpezar = document.getElementById('botonEmpezar');
 botonEmpezar.addEventListener('click', empezarFuncion);
 function empezarFuncion() {
     lugaresCard.innerHTML = "";
-    contenedorLugares.style.padding = "50px 0"
+    contenedorLugares.style.padding = "50px 0";
     for (const lugares of lugar) {
         let { id, pais, provincia, localidad, img } = lugares;
         let localesCont = document.createElement("div");
@@ -236,5 +236,5 @@ function empezarFuncion() {
             })
         }
     }
-    
+
 }

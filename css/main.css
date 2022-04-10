@@ -3,7 +3,7 @@
     --color-naranja: #da7c57;
     --color-azulOscuro: #3a3639;
     --color-blanco: #fff;
-    --color-negro: #000;
+    --color-negro: #191308;
     --color-celesteAgua: #2e86cd;
     --color-celesteClaro: #add2f0d0;
     --font-family: 'Arvo', serif;
@@ -22,6 +22,18 @@ html {
     scroll-behavior: smooth;
 }
 
+html::-webkit-scrollbar{
+    background-color: var(--color-negro);
+    width: 12px;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: var(--color-celesteAgua);
+    border-radius: 5px;
+    transition: background-color 1s;
+}
+html::-webkit-scrollbar-thumb:hover{
+    background-color: #2e85cda8 ;
+}
 /* PAGINA */
 .header {
     width: 100%;
