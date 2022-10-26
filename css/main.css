@@ -1,545 +1,604 @@
 /* variables */
 :root {
-    --color-naranja: #da7c57;
-    --color-azulOscuro: #3a3639;
-    --color-blanco: #fff;
-    --color-negro: #191308;
-    --color-celesteAgua: #2e86cd;
-    --color-celesteClaro: #add2f0d0;
-    --font-family: 'Arvo', serif;
+  --color-naranja: #da7c57;
+  --color-azulOscuro: #3a3639;
+  --color-blanco: #fff;
+  --color-negro: #191308;
+  --color-celesteAgua: #2e86cd;
+  --color-celesteClaro: #add2f0d0;
+  --font-family: "Arvo", serif;
 }
 
 /* google font */
-@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap");
 
 /* generales */
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
-html::-webkit-scrollbar{
-    background-color: var(--color-negro);
-    width: 12px;
+html::-webkit-scrollbar {
+  background-color: var(--color-negro);
+  width: 12px;
 }
-html::-webkit-scrollbar-thumb{
-    background-color: var(--color-celesteAgua);
-    border-radius: 5px;
-    transition: background-color 1s;
+html::-webkit-scrollbar-thumb {
+  background-color: var(--color-celesteAgua);
+  border-radius: 5px;
+  transition: background-color 1s;
 }
-html::-webkit-scrollbar-thumb:hover{
-    background-color: #2e85cda8 ;
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #2e85cda8;
 }
 /* PAGINA */
 .header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 999;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
 }
 
 .header .navegador {
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    align-items: center;
-    padding: 5px 6px;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  padding: 5px 6px;
 }
 
 .nubes {
-    position: relative;
-    top: 0;
-    width: 100px;
-    height: 100px;
+  position: relative;
+  top: 0;
+  width: 100px;
+  height: 100px;
 }
 
 .mapa {
-    background-image: url(../imagenes/mapamod.jpg);
-    background-size: cover;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    border-radius: 50%;
-    animation: tierra-girando 8s infinite linear;
+  background-image: url(../imagenes/mapamod.jpg);
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  border-radius: 50%;
+  animation: tierra-girando 8s infinite linear;
 
-    filter: drop-shadow(0px 15px 16px rgba(0, 0, 0, 0.67));
+  filter: drop-shadow(0px 15px 16px rgba(0, 0, 0, 0.67));
 }
 
 @keyframes tierra-girando {
-    from {
-        background-position: left center;
-    }
+  from {
+    background-position: left center;
+  }
 
-    to {
-        background-position: -251px center;
-    }
+  to {
+    background-position: -251px center;
+  }
 }
 
 .mapa:hover {
-    background-size: contain;
+  background-size: contain;
 }
 
 .header .navegador .linkLogo {
-    padding: 10px 30px 0 0;
+  padding: 10px 30px 0 0;
 }
 
 .header .navegador .logoImg {
-    position: relative;
-    width: 100%;
-    height: 110%;
-    z-index: 999;
+  position: relative;
+  width: 100%;
+  height: 110%;
+  z-index: 999;
 }
 
 .header .navegador .listaDesordenada {
-    list-style: none;
-    display: flex;
-    gap: 10rem;
-    padding: 30px 0 40px 0;
-    font-family: var(--font-family);
+  list-style: none;
+  display: flex;
+  gap: 10rem;
+  padding: 30px 0 40px 0;
+  font-family: var(--font-family);
 }
 
 .header .navegador .listaDesordenada .cerrarBurger {
-    display: none;
+  display: none;
 }
 
 .header .navegador .listaDesordenada .cerrarBurger .cerrarImg {
-    width: 35px;
-    cursor: pointer;
+  width: 35px;
+  cursor: pointer;
 }
 
 .contenedorBurger .imgBurger {
-    width: 42px;
-    cursor: pointer;
-    /* z-index: 9999; */
+  width: 42px;
+  cursor: pointer;
+  /* z-index: 9999; */
 }
 
 .contenedorBurger {
-    display: none;
+  display: none;
 }
 
 .scrollAbajo {
-    background-color: var(--color-negro);
-    transition: all 1s;
+  background-color: var(--color-negro);
+  transition: all 1s;
 }
 
 .scrollAbajoMod {
-    background-color: var(--color-blanco);
-    transition: all 1s;
+  background-color: var(--color-blanco);
+  transition: all 1s;
 }
 
-@media screen and (max-width:768px) {
-    .header .navegador .listaDesordenada {
-        gap: 6rem;
-    }
+@media screen and (max-width: 768px) {
+  .header .navegador .listaDesordenada {
+    gap: 6rem;
+  }
 }
 
-@media screen and (max-width:990px) {
-    .header .navegador {
-        flex-flow: row;
-        justify-content: space-evenly;
-    }
+@media screen and (max-width: 990px) {
+  .header .navegador {
+    flex-flow: row;
+    justify-content: space-evenly;
+  }
 
-    .header .navegador .listaDesordenada {
-        position: fixed;
-        width: 50%;
-        height: 90%;
-        top: -200%;
-        right: 0;
-        border-bottom-left-radius: 20px;
-        z-index: 10;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(37, 36, 36, 0.808);
-        transition: top 1s ease;
-    }
+  .header .navegador .listaDesordenada {
+    position: fixed;
+    width: 50%;
+    height: 90%;
+    top: -200%;
+    right: 0;
+    border-bottom-left-radius: 20px;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(37, 36, 36, 0.808);
+    transition: top 1s ease;
+  }
 
-    .header .navegador .listaDesordenada .cerrarBurger {
-        display: block;
-        position: absolute;
-        top: 45px;
-    }
+  .header .navegador .listaDesordenada .cerrarBurger {
+    display: block;
+    position: absolute;
+    top: 45px;
+  }
 
-    .contenedorBurger {
-        display: block;
-    }
+  .contenedorBurger {
+    display: block;
+  }
 
-    .nubes {
-        margin-right: 0;
-    }
+  .nubes {
+    margin-right: 0;
+  }
 }
 
 .header .navegador .listaDesordenada li .linkLi {
-    text-decoration: none;
-    color: var(--color-azulOscuro);
-    border: solid 1px var(--color-azulOscuro);
-    padding: 8px 10px;
-    transition: all .3s;
+  text-decoration: none;
+  color: var(--color-azulOscuro);
+  border: solid 1px var(--color-azulOscuro);
+  padding: 8px 10px;
+  transition: all 0.3s;
 }
 
 .header .navegador .listaDesordenada .conAmor {
-    color: var(--color-celesteAgua);
-    position: absolute;
-    bottom: 45px;
-    visibility: hidden;
+  color: var(--color-celesteAgua);
+  position: absolute;
+  bottom: 45px;
+  visibility: hidden;
 }
 
-
 .header .navegador .listaDesordenada .conAmor .corazonSpan {
-    animation: colorCorazones 5s infinite;
+  animation: colorCorazones 5s infinite;
 }
 
 @keyframes colorCorazones {
-    0% {
-        color: var(--color-celesteAgua);
-    }
+  0% {
+    color: var(--color-celesteAgua);
+  }
 
-    25% {
-        color: red;
-    }
+  25% {
+    color: red;
+  }
 
-    50% {
-        color: green;
-    }
+  50% {
+    color: green;
+  }
 
-    100% {
-        color: slateblue;
-    }
+  100% {
+    color: slateblue;
+  }
 }
 
 .header .navegador .listaDesordenada .conAmor a {
-    color: var(--color-blanco);
+  color: var(--color-blanco);
 }
 
 .header .navegador .listaDesordenada .conAmor a:hover {
-    color: var(--color-celesteAgua);
-    text-decoration: none;
+  color: var(--color-celesteAgua);
+  text-decoration: none;
 }
 
-@media screen and (max-width:990px) {
-    .header .navegador .listaDesordenada li .linkLi {
-        color: var(--color-blanco);
-        border: solid 1px var(--color-blanco);
-    }
+@media screen and (max-width: 990px) {
+  .header .navegador .listaDesordenada li .linkLi {
+    color: var(--color-blanco);
+    border: solid 1px var(--color-blanco);
+  }
 
-    .header .navegador .listaDesordenada .conAmor {
-        visibility: visible;
-    }
+  .header .navegador .listaDesordenada .conAmor {
+    visibility: visible;
+  }
 }
 
 /* clase modificada para js */
 .linkLiMod {
-    color: var(--color-blanco);
-    border: solid 1px var(--color-blanco);
-    padding: 8px 10px;
-    transition: all .3s;
-    text-decoration: none;
-    font-weight: bold;
+  color: var(--color-blanco);
+  border: solid 1px var(--color-blanco);
+  padding: 8px 10px;
+  transition: all 0.3s;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .header .navegador .listaDesordenada li .linkLi:hover {
-    background-color: var(--color-blanco);
-    border: solid 1px var(--color-blanco);
-    color: var(--color-negro);
+  background-color: var(--color-blanco);
+  border: solid 1px var(--color-blanco);
+  color: var(--color-negro);
 }
 
 .header .navegador .listaDesordenada li .linkLiMod:hover {
-    background-color: var(--color-negro);
-    border: solid 1px var(--color-negro);
-    color: var(--color-blanco);
+  background-color: var(--color-negro);
+  border: solid 1px var(--color-negro);
+  color: var(--color-blanco);
 }
 
 /* clase modificada para js */
 .hoverLink:hover {
-    background-color: var(--color-blanco);
-    border: solid 1px var(--color-blanco);
-    color: var(--color-negro);
+  background-color: var(--color-blanco);
+  border: solid 1px var(--color-blanco);
+  color: var(--color-negro);
 }
 
-@media screen and (max-width:990) {
-    .header .navegador .listaDesordenada li .linkLi {
-        color: var(--color-celesteAgua);
-        padding: 8px 60px;
-        border: solid 1px var(--color-celesteAgua);
-    }
+@media screen and (max-width: 990) {
+  .header .navegador .listaDesordenada li .linkLi {
+    color: var(--color-celesteAgua);
+    padding: 8px 60px;
+    border: solid 1px var(--color-celesteAgua);
+  }
 
-    .header .navegador .listaDesordenada li .linkLi:hover {
-        background-color: var(--color-celesteClaro);
-        border: var(--color-celesteClaro);
-    }
-
+  .header .navegador .listaDesordenada li .linkLi:hover {
+    background-color: var(--color-celesteClaro);
+    border: var(--color-celesteClaro);
+  }
 }
 
-@media screen and (max-width:530px) {
-    .header .navegador {
-        justify-content: space-between;
-        padding: 0 60px;
-    }
+@media screen and (max-width: 530px) {
+  .header .navegador {
+    justify-content: space-between;
+    padding: 0 60px;
+  }
 
-    .nubes {
-        margin-top: 5px;
-        left: -17px
-    }
+  .nubes {
+    margin-top: 5px;
+    left: -17px;
+  }
 
-    .header .navegador .listaDesordenada {
-        width: 60%;
-    }
+  .header .navegador .listaDesordenada {
+    width: 60%;
+  }
 
-    .header .navegador .listaDesordenada .cerrarBurger .cerrarImg {
-        width: 30px;
-    }
+  .header .navegador .listaDesordenada .cerrarBurger .cerrarImg {
+    width: 30px;
+  }
 
-    .header .navegador .listaDesordenada .cerrarBurger {
-        top: 38px;
-        right: 62px;
-    }
+  .header .navegador .listaDesordenada .cerrarBurger {
+    top: 38px;
+    right: 62px;
+  }
 }
-
-
 
 /* -------------FONDO ARENA----------------------- */
 .contenedorFondoArena {
-    width: 100%;
-    position: relative;
-    background-size: cover;
-    background-image: url(../imagenes/atarceder.jpg);
-    height: 100vh;
+  width: 100%;
+  position: relative;
+  background-size: cover;
+  background-image: url(../imagenes/atarceder.jpg);
+  height: 100vh;
 }
 
 /* flecha para abajo */
 .contenedorFlecha {
-    position: absolute;
-    bottom: 25px;
-    bottom: 80px;
-    text-align: center;
-    width: 100%;
+  position: absolute;
+  bottom: 25px;
+  bottom: 80px;
+  text-align: center;
+  width: 100%;
 }
 
 .contenedorFlecha img {
-    width: 60px;
+  width: 60px;
 }
 
 .contenedorSelector {
-    width: 100%;
-    margin: auto;
-    position: absolute;
-    bottom: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .contenedorSelector .selector1 {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background-image: url(../imagenes/iconocamping.png);
-    background-size: cover;
-    cursor: pointer;
-    transition: transform .2s;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-image: url(../imagenes/iconocamping.png);
+  background-size: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
 .contenedorSelector .selector1:hover {
-    transform: translateY(-8px);
+  transform: translateY(-8px);
 }
 
 .contenedorSelector .selector2 {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background-image: url(../imagenes/iconobosque.png);
-    background-size: cover;
-    cursor: pointer;
-    transition: transform .2s;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-image: url(../imagenes/iconobosque.png);
+  background-size: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
 .contenedorSelector .selector2:hover {
-    transform: translateY(-8px);
+  transform: translateY(-8px);
 }
 
 .contenedorSelector .selector3 {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background-image: url(../imagenes/iconomontana.png);
-    background-size: cover;
-    cursor: pointer;
-    transition: transform .2s;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-image: url(../imagenes/iconomontana.png);
+  background-size: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
 .contenedorSelector .selector3:hover {
-    transform: translateY(-8px);
+  transform: translateY(-8px);
 }
 
 .contenedorSelector .selector4 {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background-image: url(../imagenes/iconoplaya.png);
-    background-size: cover;
-    cursor: pointer;
-    transition: transform .2s;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-image: url(../imagenes/iconoplaya.png);
+  background-size: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
 .contenedorSelector .selector4:hover {
-    transform: translateY(-8px);
+  transform: translateY(-8px);
 }
 
 #contenedorLugares .contenedorBotonEmpezar {
-    position: absolute;
-    top: 50%;
-    right: 44%;
-}
-
-@media screen and (max-width:1024px) {
-    #contenedorLugares .contenedorBotonEmpezar {
-        right: 42%;
-    }
-}
-
-@media screen and (max-width:768px) {
-    #contenedorLugares .contenedorBotonEmpezar {
-        right: 39%;
-    }
-}
-
-@media screen and (max-width:600px) {
-    #contenedorLugares .contenedorBotonEmpezar {
-        right: 34%;
-    }
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  text-align: center;
 }
 
 #contenedorLugares .contenedorBotonEmpezar #botonEmpezar {
-    width: 140px;
-    height: 45px;
-    font-size: 23px;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: transparent;
-    color: var(--color-blanco);
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 700;
-    position: relative;
-    transition: all 0.5s;
-    z-index: 1;
+  width: 140px;
+  height: 45px;
+  font-size: 23px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--color-blanco);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  position: relative;
+  transition: all 0.5s;
+  z-index: 1;
 }
 
 #contenedorLugares .contenedorBotonEmpezar #botonEmpezar::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 5px;
-    height: 100%;
-    background-color: var(--color-celesteAgua);
-    z-index: -1;
-    transition: all 0.5s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: var(--color-celesteAgua);
+  z-index: -1;
+  transition: all 0.5s;
 }
 
 #contenedorLugares .contenedorBotonEmpezar #botonEmpezar:hover::before {
-    width: 100%;
+  width: 100%;
 }
 
 #contenedorLugares .contenedorBotonEmpezar #botonEmpezar:hover {
-    color: var(--color-blanco);
+  color: var(--color-blanco);
 }
 
 #contenedorLugares .contenedorBotonEmpezar #botonEmpezar:active:before {
-    background: var(--color-azulOscuro);
+  background: var(--color-azulOscuro);
 }
 
 #contenedorLugares #lugaresCard {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    padding: 0 5px;
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 0 5px;
 }
 
 .paCerrarModalActivo {
-    display: none;
+  display: none;
 }
 
 #contenedorLugares #lugaresCard .cartaLugar {
-    padding: 20px 10px;
-    text-align: center;
-    background: rgb(255, 255, 255);
-    border-radius: 0.4em;
-    box-shadow: 0.3em 0.3em 0.7em #00000015;
-    transition: border 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: rgb(250, 250, 250) 0.2em solid;
+  padding: 20px 10px;
+  text-align: center;
+  background: rgb(255, 255, 255);
+  border-radius: 0.4em;
+  box-shadow: 0.3em 0.3em 0.7em #00000015;
+  transition: border 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: rgb(250, 250, 250) 0.2em solid;
 }
 
 #contenedorLugares #lugaresCard .cartaLugar:hover {
-    border: var(--color-celesteAgua) 0.2em solid;
+  border: var(--color-celesteAgua) 0.2em solid;
 }
 
 #contenedorLugares #lugaresCard .cartaLugar .itemData {
-    font-family: var(--font-family);
-
+  font-family: var(--font-family);
 }
 
 #contenedorLugares #lugaresCard .cartaLugar .itemData h2 {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 #contenedorLugares #lugaresCard .cartaLugar .itemData h3 {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 #contenedorLugares #lugaresCard .cartaLugar .itemData h4 {
-    font-size: 13px;
+  font-size: 13px;
 }
 
 #contenedorLugares #lugaresCard .cartaLugar .itemData .btnLugar {
-    margin-top: 15px;
-    padding: 6px 30px;
-    text-decoration: none;
-    border-style: none;
-    position: relative;
-    background-color: var(--color-negro);
-    color: var(--color-blanco);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all .6s;
+  margin-top: 15px;
+  padding: 6px 30px;
+  text-decoration: none;
+  border-style: none;
+  position: relative;
+  background-color: var(--color-negro);
+  color: var(--color-blanco);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.6s;
 }
 
 #contenedorLugares #lugaresCard .cartaLugar .itemData .btnLugar:hover {
-    color: var(--color-negro);
-    background-color: var(--color-blanco);
-    transform: scale(1.05);
-    border: solid 1px var(--color-negro);
+  color: var(--color-negro);
+  background-color: var(--color-blanco);
+  transform: scale(1.05);
+  border: solid 1px var(--color-negro);
 }
-
-
 
 /* -------------------MODAL DE LUGARES-------------------------- */
 #contenedorLugares #contenedorModal {
-    background-color: #00000070;
-    position: fixed;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.6s;
+  background-color: #00000070;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.6s;
 }
 
 #contenedorLugares #contenedorModal .modalItem {
-    width: 70%;
+  width: 70%;
+  margin: auto;
+  height: 85vh;
+  overflow: hidden;
+  background-color: var(--color-naranja);
+  transition: transform 0.6s;
+  transform: translateY(0%);
+  position: relative;
+  display: flex;
+}
+
+#contenedorLugares #contenedorModal .modalItem .logoClose {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 17px;
+  cursor: pointer;
+  background-color: var(--color-blanco);
+  padding: 7px;
+  border-radius: 10px;
+  z-index: 90;
+}
+
+#contenedorLugares #contenedorModal .modalItem .logoClose:hover {
+  transform: scale(0.95);
+}
+
+#contenedorLugares #contenedorModal .modalItem .fotoLateral {
+  width: 40%;
+  height: 100%;
+}
+
+#contenedorLugares #contenedorModal .modalItem .fotoLateral img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#contenedorLugares #contenedorModal .modalItem .modalInfo {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  text-align: center;
+  gap: 2rem;
+}
+
+#contenedorLugares #contenedorModal .modalItem .modalInfo .modalTitulo {
+  font-size: 20px;
+  position: absolute;
+  left: 12px;
+  top: 15px;
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+
+#contenedorLugares #contenedorModal .modalItem .modalInfo .modalInfoLugar {
+  padding-bottom: 20px;
+}
+
+#contenedorLugares
+  #contenedorModal
+  .modalItem
+  .modalInfo
+  .modalInfoLugar
+  .modalUbicacion {
+  font-size: 25px;
+}
+
+#contenedorLugares #contenedorModal .modalItem .modalInfo .modalImg {
+  width: 34%;
+}
+
+#contenedorLugares #contenedorModal .modalItem .modalInfo .modalImg {
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  #contenedorLugares #contenedorModal .modalItem {
+    width: 82%;
     margin: auto;
+    flex-direction: column;
     height: 85vh;
     overflow: hidden;
     background-color: var(--color-naranja);
@@ -547,170 +606,92 @@ html::-webkit-scrollbar-thumb:hover{
     transform: translateY(0%);
     position: relative;
     display: flex;
-}
+  }
 
-#contenedorLugares #contenedorModal .modalItem .logoClose {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    width: 17px;
-    cursor: pointer;
-    background-color: var(--color-blanco);
-    padding: 7px;
-    border-radius: 10px;
-    z-index: 90;
-}
-
-#contenedorLugares #contenedorModal .modalItem .logoClose:hover {
-    transform: scale(.95);
-}
-
-#contenedorLugares #contenedorModal .modalItem .fotoLateral {
-    width: 40%;
-    height: 100%;
-}
-
-#contenedorLugares #contenedorModal .modalItem .fotoLateral img {
+  #contenedorLugares #contenedorModal .modalItem .fotoLateral {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+    height: 34vh;
+  }
 
-#contenedorLugares #contenedorModal .modalItem .modalInfo {
-    width: 60%;
+  #contenedorLugares #contenedorModal .modalItem .modalInfo {
+    width: 78%;
     height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
     text-align: center;
     gap: 2rem;
-}
+  }
 
-#contenedorLugares #contenedorModal .modalItem .modalInfo .modalTitulo {
-    font-size: 20px;
-    position: absolute;
-    left: 12px;
-    top: 15px;
-    padding: 5px;
-    background-color: black;
-    color: white;
-}
+  #contenedorLugares #contenedorModal .modalItem .modalInfo .modalImg {
+    width: 50%;
+  }
 
-#contenedorLugares #contenedorModal .modalItem .modalInfo .modalInfoLugar {
-    padding-bottom: 20px;
-}
-
-#contenedorLugares #contenedorModal .modalItem .modalInfo .modalInfoLugar .modalUbicacion {
-    font-size: 25px;
-}
-
-#contenedorLugares #contenedorModal .modalItem .modalInfo .modalImg {
-    width: 34%;
-}
-
-#contenedorLugares #contenedorModal .modalItem .modalInfo .modalImg {
+  #contenedorLugares #contenedorModal .modalItem .modalInfo .modalImg img {
     width: 100%;
+  }
 }
 
-@media screen and (max-width:1024px) {
-    #contenedorLugares #contenedorModal .modalItem {
-        width: 82%;
-        margin: auto;
-        flex-direction: column;
-        height: 85vh;
-        overflow: hidden;
-        background-color: var(--color-naranja);
-        transition: transform 0.6s;
-        transform: translateY(0%);
-        position: relative;
-        display: flex;
-    }
+@media screen and (max-width: 990px) {
+  #contenedorLugares #contenedorModal .modalItem {
+    width: 82%;
+    margin: auto;
+    flex-direction: column;
+    height: 85vh;
+    overflow: scroll;
+    background-color: var(--color-naranja);
+    transition: transform 0.6s;
+    transform: translateY(0%);
+    position: relative;
+    display: flex;
+  }
 
-    #contenedorLugares #contenedorModal .modalItem .fotoLateral {
-        width: 100%;
-        height: 34vh;
-    }
+  #contenedorLugares #contenedorModal .modalItem .fotoLateral {
+    width: 100%;
+    height: 34vh;
+  }
 
-    #contenedorLugares #contenedorModal .modalItem .modalInfo {
-        width: 78%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: row-reverse;
-        text-align: center;
-        gap: 2rem;
-    }
+  #contenedorLugares #contenedorModal .modalItem .modalInfo {
+    width: 100%;
+    padding: 10px 0;
+  }
 
-    #contenedorLugares #contenedorModal .modalItem .modalInfo .modalImg {
-        width: 50%;
-    }
+  #contenedorLugares #contenedorModal .modalItem .modalInfo .modalImg {
+    width: 40%;
+  }
 
-    #contenedorLugares #contenedorModal .modalItem .modalInfo .modalImg img {
-        width: 100%;
-    }
+  #contenedorLugares #contenedorModal .modalItem .modalInfo .modalImg img {
+    width: 100%;
+  }
 }
 
-@media screen and (max-width:990px) {
-    #contenedorLugares #contenedorModal .modalItem {
-        width: 82%;
-        margin: auto;
-        flex-direction: column;
-        height: 85vh;
-        overflow: scroll;
-        background-color: var(--color-naranja);
-        transition: transform 0.6s;
-        transform: translateY(0%);
-        position: relative;
-        display: flex;
-    }
+@media screen and (max-width: 768px) {
+  #contenedorLugares #contenedorModal .modalItem {
+    width: 95%;
+    height: 75vh;
+  }
 
-    #contenedorLugares #contenedorModal .modalItem .fotoLateral {
-        width: 100%;
-        height: 34vh;
-    }
+  #contenedorLugares #contenedorModal .modalItem .fotoLateral {
+    height: 35vh;
+  }
 
-    #contenedorLugares #contenedorModal .modalItem .modalInfo {
-        width: 100%;
-        padding: 10px 0;
-    }
+  #contenedorLugares #contenedorModal .modalItem .modalInfo {
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-    #contenedorLugares #contenedorModal .modalItem .modalInfo .modalImg {
-        width: 40%;
-    }
+  #contenedorLugares #contenedorModal .modalItem .modalInfo .modalInfoLugar {
+    padding-bottom: 0;
+  }
 
-    #contenedorLugares #contenedorModal .modalItem .modalInfo .modalImg img {
-        width: 100%;
-    }
+  #contenedorLugares #contenedorModal .modalItem .modalInfo .modalImg {
+    width: 47%;
+  }
 }
 
-@media screen and (max-width:768px) {
-    #contenedorLugares #contenedorModal .modalItem {
-        width: 95%;
-        height: 75vh;
-    }
-
-    #contenedorLugares #contenedorModal .modalItem .fotoLateral {
-        height: 35vh;
-    }
-
-    #contenedorLugares #contenedorModal .modalItem .modalInfo {
-        width: 100%;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    #contenedorLugares #contenedorModal .modalItem .modalInfo .modalInfoLugar {
-        padding-bottom: 0;
-    }
-
-    #contenedorLugares #contenedorModal .modalItem .modalInfo .modalImg {
-        width: 47%;
-    }
-}
-
-@media screen and (max-width:550px) {
-    #contenedorLugares #contenedorModal .modalItem .modalInfo .modalImg {
-        width: 63%;
-    }
+@media screen and (max-width: 550px) {
+  #contenedorLugares #contenedorModal .modalItem .modalInfo .modalImg {
+    width: 63%;
+  }
 }
